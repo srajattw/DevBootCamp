@@ -1,5 +1,6 @@
 package com.parkinglot;
 
+import com.parkinglot.exception.InvalidParkingTokenException;
 import com.parkinglot.exception.SlotNotAvailableException;
 
 import java.util.*;
@@ -7,42 +8,98 @@ import java.util.*;
 /**
  * Created by rajats on 6/28/16.
  */
-public class ParkingLot extends Observable{
-
-
-
-    private List<Object> issuedTokens = new LinkedList<>();
-
-    private int capacity;
+public class ParkingLot {
 
     public static String SLOT_UNAVAILABLE_EXCEPTION_MSG = "Slot not available";
 
-    public ParkingLot(int capacity) {
+    private final int capacity;
 
-        this.capacity = capacity;
+    private final String parkingLotNumber ;
+
+    private Map<ParkingToken,Car> issuedTokens = new HashMap<>();
+
+    private List<ParkingLotObserver> observers = new ArrayList<>();
+
+    public String getParkingLotNumber() {
+        return parkingLotNumber;
     }
 
-    public Object park() throws SlotNotAvailableException {
-        if (issuedTokens.size() == capacity) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        ParkingLot that = (ParkingLot) o;
+
+        return parkingLotNumber != null ? parkingLotNumber.equals(that.parkingLotNumber) : that.parkingLotNumber == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return parkingLotNumber != null ? parkingLotNumber.hashCode() : 0;
+    }
+
+    public ParkingLot(int capacity) {
+        this.capacity = capacity;
+        this.parkingLotNumber = "#"+System.nanoTime();
+    }
+
+    public ParkingToken park(Car car) throws SlotNotAvailableException {
+        if (issuedTokens.size() == capacity) {
             throw new SlotNotAvailableException(SLOT_UNAVAILABLE_EXCEPTION_MSG);
         } else {
-            Object token = new Object();
-            issuedTokens.add(token);
+
+            ParkingToken token = new ParkingToken(car.getRegistrationNumber(),parkingLotNumber);
+            issuedTokens.put(token,car);
             if (issuedTokens.size() == capacity) {
-                setChanged();
-                notifyObservers("Parking lot is full");
+               notifyParkingSpaceFull();
             }
             return token;
         }
     }
 
-    public boolean unPark(Object parkingToken) {
-        return issuedTokens.remove(parkingToken);
+
+
+    private void notifyParkingSpaceFull() {
+
+        for (ParkingLotObserver observer : observers) {
+            observer.onParkingSpaceFull();
+        }
+
     }
 
-    @Override
-    public synchronized void addObserver(Observer o) {
-        super.addObserver(o);
+    private void notifyParkingSpaceAvailable() {
+
+        for (ParkingLotObserver observer : observers) {
+            observer.onParkingSpaceAvailable();
+        }
+
     }
+
+    public Car unPark(Object parkingToken) throws InvalidParkingTokenException {
+
+        boolean wasFullBeforeUnPark = isFull();
+        boolean isValidToken =  issuedTokens.containsKey(parkingToken);
+        if (!isValidToken) {
+            throw new InvalidParkingTokenException("Parking Token is invalid");
+        } else {
+            Car car = issuedTokens.remove(parkingToken);
+            if (wasFullBeforeUnPark) {
+                notifyParkingSpaceAvailable();
+            }
+            return car;
+        }
+    }
+
+    public boolean isFull() {
+        return capacity == issuedTokens.size();
+    }
+
+
+    public synchronized void addObserver(ParkingLotObserver parkingLotObserver) {
+        observers.add(parkingLotObserver);
+    }
+
+
 }

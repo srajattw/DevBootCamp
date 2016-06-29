@@ -1,12 +1,12 @@
 package com.parkinglot;
 
+import com.parkinglot.exception.InvalidParkingTokenException;
 import com.parkinglot.exception.SlotNotAvailableException;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.util.Observer;
 
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertNotNull;
@@ -18,20 +18,33 @@ import static org.mockito.Mockito.*;
  */
 public class ParkingLotTest {
 
-
+    public static final String CAR_REGISTRATION_NUMBER = "xyz1234";
     @Rule
-    public ExpectedException exception = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none();
+
+    private ParkingLotObserver parkingLotObserver;
+
+    private Car car ;
+
+    @Before
+    public void setup(){
+        parkingLotObserver = mock(ParkingLotObserver.class);
+        car = mock(Car.class);
+        when(car.getRegistrationNumber()).thenReturn(CAR_REGISTRATION_NUMBER);
+    }
+
+
 
     @Test
     public void shouldParkMyCarWhenSlotsAvailable() throws SlotNotAvailableException {
 
         ParkingLot parkingLot = new ParkingLot(2);
 
-        Object parkingToken1 = parkingLot.park();
+        Object parkingToken1 = parkingLot.park(car);
 
         Assert.assertNotNull(parkingToken1);
 
-        Object parkingToken2 = parkingLot.park();
+        Object parkingToken2 = parkingLot.park(car);
 
         assertNotNull(parkingToken2);
     }
@@ -43,84 +56,112 @@ public class ParkingLotTest {
 
         ParkingLot parkingLot = new ParkingLot(1);
 
-        Object parkingTokenA = parkingLot.park();
+        Object parkingTokenA = parkingLot.park(car);
         assertNotNull(parkingTokenA);
 
-        exception.expect(SlotNotAvailableException.class);
-        exception.expectMessage(ParkingLot.SLOT_UNAVAILABLE_EXCEPTION_MSG);
+        expectedException.expect(SlotNotAvailableException.class);
+        expectedException.expectMessage(ParkingLot.SLOT_UNAVAILABLE_EXCEPTION_MSG);
 
-        parkingLot.park();
+        parkingLot.park(car);
 
     }
 
     @Test
-    public void shouldUnparkMyCarWithValidToken() throws SlotNotAvailableException {
+    public void shouldUnparkMyCarWithValidToken() throws SlotNotAvailableException, InvalidParkingTokenException {
         ParkingLot parkingLot = new ParkingLot(1);
-        Object parkingToken = parkingLot.park();
-        boolean isUnparked = parkingLot.unPark(parkingToken);
-        assertTrue(isUnparked);
+        ParkingToken parkingToken = parkingLot.park(car);
+        Car unparkedCar = parkingLot.unPark(parkingToken);
+        Assert.assertEquals(car,unparkedCar);
+        Assert.assertEquals(CAR_REGISTRATION_NUMBER,parkingToken.getVehicleNumber());
     }
 
     @Test
-    public void shouldNotUnparkMyCarWithWrongToken() throws SlotNotAvailableException {
+    public void shouldNotUnparkMyCarWithWrongToken() throws SlotNotAvailableException, InvalidParkingTokenException {
+        expectedException.expect(InvalidParkingTokenException.class);
         ParkingLot parkingLot = new ParkingLot(1);
-        parkingLot.park();
-        boolean isUnparked = parkingLot.unPark(new Object());
-        assertFalse(isUnparked);
+        parkingLot.park(car);
+        parkingLot.unPark(new Object());
     }
 
     @Test
-    public void shouldNotUnparkMyCarIfTokenAlreadyUsed() throws SlotNotAvailableException {
+    public void shouldNotUnparkMyCarIfTokenAlreadyUsed() throws SlotNotAvailableException, InvalidParkingTokenException {
+
+        expectedException.expect(InvalidParkingTokenException.class);
 
         ParkingLot parkingLot = new ParkingLot(1);
-        Object parkingToken = parkingLot.park();
+        Object parkingToken = parkingLot.park(car);
 
-        boolean isUnparked = parkingLot.unPark(parkingToken);
-        assertTrue(isUnparked);
+        parkingLot.unPark(parkingToken);
 
-        isUnparked = parkingLot.unPark(parkingToken);
-        Assert.assertFalse(isUnparked);
+        parkingLot.unPark(parkingToken);
 
     }
 
     @Test
     public void shouldNotifyProductOwnerWhenTheParkingLotIsFull() throws SlotNotAvailableException {
-        Observer parkingOwner = mock(Observer.class);
+
         ParkingLot parkingLot = new ParkingLot(1);
-        parkingLot.addObserver(parkingOwner);
-        Object parkingToken = parkingLot.park();
-        verify(parkingOwner, times(1)).update(parkingLot,"Parking lot is full");
+        parkingLot.addObserver(parkingLotObserver);
+        Object parkingToken = parkingLot.park(car);
+        verify(parkingLotObserver, times(1)).onParkingSpaceFull();
     }
 
 
     @Test
     public void shouldNotNotifyProductOwnerWhenTheParkingLotIsNotFull() throws SlotNotAvailableException {
-        Observer parkingOwner = mock(Observer.class);
+
         ParkingLot parkingLot = new ParkingLot(2);
-        parkingLot.addObserver(parkingOwner);
+        parkingLot.addObserver(parkingLotObserver);
 
-        Object parkingToken = parkingLot.park();
+        Object parkingToken = parkingLot.park(car);
 
-        verify(parkingOwner, times(0)).update(parkingLot,"");
+        verify(parkingLotObserver, times(0)).onParkingSpaceFull();
     }
 
     @Test
     public void shouldNotifySecurityPersonnelWhenTheParkingLotIsFull() throws SlotNotAvailableException {
-        Observer airportSecurityPersonnel = mock(Observer.class);
+
         ParkingLot parkingLot = new ParkingLot(1);
-        parkingLot.addObserver(airportSecurityPersonnel);
+        parkingLot.addObserver(parkingLotObserver);
 
-        Object parkingToken = parkingLot.park();
+        Object parkingToken = parkingLot.park(car);
 
-        verify(airportSecurityPersonnel, times(1)).update(parkingLot,"Parking lot is full");
+        verify(parkingLotObserver, times(1)).onParkingSpaceFull();
     }
 
     @Test
     public void shouldNotNotifySecurityPersonnelWhenTheParkingLotIsNotFull() throws SlotNotAvailableException {
-        Observer airpostSecurityPersonnel = mock(Observer.class);
         ParkingLot parkingLot = new ParkingLot(2);
-        parkingLot.addObserver(airpostSecurityPersonnel);
-        Object parkingToken = parkingLot.park();
-        verify(airpostSecurityPersonnel, times(0)).update(parkingLot,"");
+        parkingLot.addObserver(parkingLotObserver);
+        Object parkingToken = parkingLot.park(car);
+        verify(parkingLotObserver, times(0)).onParkingSpaceFull();
     }
+
+
+    @Test
+    public void shouldNotifyObserverWhenUnparkAndParkingSlotWasFull() throws SlotNotAvailableException, InvalidParkingTokenException {
+
+        ParkingLot parkingLot = new ParkingLot(1);
+        parkingLot.addObserver(parkingLotObserver);
+        Object parkingToken = parkingLot.park(car);
+
+        parkingLot.unPark(parkingToken);
+
+        verify(parkingLotObserver, times(1)).onParkingSpaceAvailable();
+    }
+
+
+    @Test
+    public void shouldNotNotifyObserverWhenUnparkAndParkingSlotWasNotFull() throws SlotNotAvailableException, InvalidParkingTokenException {
+
+        ParkingLot parkingLot = new ParkingLot(2);
+        parkingLot.addObserver(parkingLotObserver);
+        Object parkingToken = parkingLot.park(car);
+
+        parkingLot.unPark(parkingToken);
+
+        verify(parkingLotObserver, times(0)).onParkingSpaceAvailable();
+    }
+
+
 }
