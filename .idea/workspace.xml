@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="408e629c-56f3-4647-a1d5-f7e8a07fbfb4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/Car.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/ParkingAttendant.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/ParkingLot.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/ParkingLotObserver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/ParkingToken.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/exception/InvalidParkingTokenException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/parkinglot/exception/SlotNotAvailableException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/com/parkinglot/ParkingAttendantTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/com/parkinglot/ParkingLotTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ParkingLot/com/parkinglot/ParkingLotTest.class" afterPath="$PROJECT_DIR$/out/test/ParkingLot/com/parkinglot/ParkingLotTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ParkingLot.iml" afterPath="$PROJECT_DIR$/ParkingLot.iml" />
-    </list>
+    <list default="true" id="408e629c-56f3-4647-a1d5-f7e8a07fbfb4" name="Default" comment="" />
     <ignored path="ParkingLot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -90,8 +77,8 @@
       <file leaf-file-name="ParkingLotTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/parkinglot/ParkingLotTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="645">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,7 +87,7 @@
       <file leaf-file-name="ParkingAttendantTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/parkinglot/ParkingAttendantTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
+            <state relative-caret-position="1440">
               <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding />
             </state>
@@ -304,33 +291,7 @@
       <recent name="com.parkinglot" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.parkinglot in ParkingLot">
-    <configuration default="false" name="ParkingAttendantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.parkinglot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ParkingLot" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.parkinglot" />
-      <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingAttendantTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ParkingAttendantTest">
     <configuration default="false" name="com.parkinglot in ParkingLot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -357,58 +318,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ParkingAttendantTest.shouldParkingAttendantUnparkTheCarMuplipleParkingLots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.parkinglot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ParkingLot" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.parkinglot" />
-      <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingAttendantTest" />
-      <option name="METHOD_NAME" value="shouldParkingAttendantUnparkTheCarMuplipleParkingLots" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ParkingAttendantTest.shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.parkinglot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ParkingLot" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.parkinglot" />
-      <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingAttendantTest" />
-      <option name="METHOD_NAME" value="shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="ParkingLotTest.shouldParkMyCarWhenSlotsAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -423,6 +332,84 @@
       <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingLotTest" />
       <option name="METHOD_NAME" value="shouldParkMyCarWhenSlotsAvailable" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ParkingLotTest.shouldNotParkMyCarIfSpaceUnavailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.parkinglot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ParkingLot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.parkinglot" />
+      <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingLotTest" />
+      <option name="METHOD_NAME" value="shouldNotParkMyCarIfSpaceUnavailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ParkingLotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.parkinglot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ParkingLot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.parkinglot" />
+      <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingLotTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ParkingAttendantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.parkinglot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ParkingLot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.parkinglot" />
+      <option name="MAIN_CLASS_NAME" value="com.parkinglot.ParkingAttendantTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -670,19 +657,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.com.parkinglot in ParkingLot" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest.shouldParkingAttendantUnparkTheCarMuplipleParkingLots" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest.shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ParkingLotTest.shouldParkMyCarWhenSlotsAvailable" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.com.parkinglot in ParkingLot" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ParkingLotTest.shouldParkMyCarWhenSlotsAvailable" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ParkingLotTest.shouldNotParkMyCarIfSpaceUnavailable" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ParkingLotTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.com.parkinglot in ParkingLot" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ParkingLotTest.shouldParkMyCarWhenSlotsAvailable" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest.shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest.shouldParkingAttendantUnparkTheCarMuplipleParkingLots" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ParkingAttendantTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ParkingLotTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ParkingLotTest.shouldNotParkMyCarIfSpaceUnavailable" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.com.parkinglot in ParkingLot" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ParkingLotTest.shouldParkMyCarWhenSlotsAvailable" />
       </list>
     </recent_temporary>
   </component>
@@ -703,10 +690,10 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParkingAttendantTest - 2016.06.29 at 15h 11m 48s.xml">
+    <history-entry file="ParkingAttendantTest - 2016.06.29 at 15h 15m 41s.xml">
       <configuration name="ParkingAttendantTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParkingAttendantTest - 2016.06.29 at 15h 15m 41s.xml">
+    <history-entry file="ParkingAttendantTest - 2016.06.30 at 12h 22m 54s.xml">
       <configuration name="ParkingAttendantTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ParkingAttendantTest_shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots - 2016.06.29 at 15h 39m 04s.xml">
@@ -715,11 +702,11 @@
     <history-entry file="ParkingAttendantTest_shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots - 2016.06.29 at 15h 40m 33s.xml">
       <configuration name="ParkingAttendantTest.shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParkingAttendantTest_shouldParkingAttendantUnparkTheCarMuplipleParkingLots - 2016.06.29 at 15h 10m 29s.xml">
-      <configuration name="ParkingAttendantTest.shouldParkingAttendantUnparkTheCarMuplipleParkingLots" configurationId="JUnit" />
+    <history-entry file="ParkingLotTest - 2016.06.30 at 12h 22m 49s.xml">
+      <configuration name="ParkingLotTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParkingAttendantTest_shouldParkingAttendantUnparkTheCarMuplipleParkingLots - 2016.06.29 at 15h 11m 42s.xml">
-      <configuration name="ParkingAttendantTest.shouldParkingAttendantUnparkTheCarMuplipleParkingLots" configurationId="JUnit" />
+    <history-entry file="ParkingLotTest_shouldNotParkMyCarIfSpaceUnavailable - 2016.06.30 at 12h 22m 40s.xml">
+      <configuration name="ParkingLotTest.shouldNotParkMyCarIfSpaceUnavailable" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ParkingLotTest_shouldParkMyCarWhenSlotsAvailable - 2016.06.30 at 11h 14m 39s.xml">
       <configuration name="ParkingLotTest.shouldParkMyCarWhenSlotsAvailable" configurationId="JUnit" />
@@ -1024,15 +1011,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/parkinglot/ParkingLotTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="645">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/parkinglot/ParkingAttendantTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="1440">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
         </state>
