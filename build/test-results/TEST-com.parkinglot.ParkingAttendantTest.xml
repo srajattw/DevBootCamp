@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.parkinglot.ParkingAttendantTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-06-30T06:14:15" hostname="insrajat.local" time="0.083">
+<testsuite name="com.parkinglot.ParkingAttendantTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-06-30T07:15:45" hostname="insrajat.local" time="0.087">
   <properties/>
-  <testcase name="shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" classname="com.parkinglot.ParkingAttendantTest" time="0.08"/>
+  <testcase name="shouldParkingAttendantAcceptTheCarWithMuplipleParkingLots" classname="com.parkinglot.ParkingAttendantTest" time="0.084"/>
   <testcase name="shouldNotParkingAttendantUnparkTheCar" classname="com.parkinglot.ParkingAttendantTest" time="0.0"/>
   <testcase name="shouldParkingAttendantNotAcceptTheCarWhenAllParkingLotsAreFull" classname="com.parkinglot.ParkingAttendantTest" time="0.0"/>
-  <testcase name="shouldParkingAttendantAcceptTheCar" classname="com.parkinglot.ParkingAttendantTest" time="0.001"/>
+  <testcase name="shouldParkingAttendantAcceptTheCar" classname="com.parkinglot.ParkingAttendantTest" time="0.0"/>
   <testcase name="shouldParkingAttendantUnparkTheCar" classname="com.parkinglot.ParkingAttendantTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

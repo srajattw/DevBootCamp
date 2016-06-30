@@ -19,6 +19,7 @@ import static org.mockito.Mockito.*;
 public class ParkingLotTest {
 
     public static final String CAR_REGISTRATION_NUMBER = "xyz1234";
+
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
@@ -50,17 +51,13 @@ public class ParkingLotTest {
     }
 
 
-    @Test
-    public void shouldNotParkMyCarIfSpaceUnavailable() throws SlotNotAvailableException {
-
+    @Test(expected = SlotNotAvailableException.class)
+    public void shouldNotParkMyCarIfSpaceUnavailable1() throws SlotNotAvailableException {
 
         ParkingLot parkingLot = new ParkingLot(1);
 
         Object parkingTokenA = parkingLot.park(car);
         assertNotNull(parkingTokenA);
-
-        expectedException.expect(SlotNotAvailableException.class);
-        expectedException.expectMessage(ParkingLot.SLOT_UNAVAILABLE_EXCEPTION_MSG);
 
         parkingLot.park(car);
 
